@@ -1,0 +1,43 @@
+# 🇮🇳 India Elections SQL Analysis Project
+
+## 📌 Overview
+This project analyzes Indian election results using SQL. It focuses on
+party performance, constituency-level analysis, and state-wise trends,
+with a strong emphasis on query and index optimization.
+
+## 🛠 Tech Stack
+- MySQL 8.0
+- MySQL Workbench
+- SQL (CTEs, Window Functions, Indexing)
+
+## 📂 Project Structure
+- 01_schema → Database & table creation
+- 02_data → CSV datasets
+- 03_basic_queries → Basic analysis queries
+- 04_advanced_queries → CTEs & window functions
+- 05_optimization → Indexing & performance tuning
+- 06_docs → ER diagram & query outputs
+
+## 🚀 Key Features
+- Real-world election dataset
+- Advanced SQL analytics
+- Query optimization using indexes
+- Execution plan analysis (EXPLAIN ANALYZE)
+
+## ⚙️ Optimization Highlights
+- Reduced full table scans using indexes
+- Used composite and covering indexes
+- Improved query readability using CTEs
+- Ranking analysis using window functions
+
+## ▶️ How to Run
+1. Create database in MySQL
+2. Run `schema.sql`
+3. Import CSV files
+4. Execute queries from query folders
+
+## 📊 Sample Query
+```sql
+SELECT candidate, total_votes,
+RANK() OVER (ORDER BY total_votes DESC) AS vote_rank
+FROM constituencywise_details;
